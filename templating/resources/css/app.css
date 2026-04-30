@@ -1,0 +1,68 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+:root {
+    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+    .bg-dark-custom { background: #1a1c23; min-height: 100vh; font-family: 'Poppins', sans-serif; }
+
+    .glass-card {
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 20px;
+        padding: 25px;
+        position: relative;
+        overflow: hidden;
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        cursor: pointer;
+    }
+
+    .glass-card:hover {
+        transform: scale(1.05);
+        background: rgba(255, 255, 255, 0.1);
+        box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+    }
+
+    /* Floating CRUD Actions */
+    .crud-actions {
+        position: absolute;
+        top: -50px; /* Sembunyi di atas */
+        right: 15px;
+        transition: 0.3s;
+        display: flex;
+        gap: 8px;
+    }
+
+    .glass-card:hover .crud-actions { top: 15px; }
+
+    .btn-action {
+        width: 32px; height: 32px; border-radius: 8px; border: none;
+        color: white; display: flex; align-items: center; justify-content: center; font-size: 12px;
+    }
+    .edit { background: #4e73df; }
+    .delete { background: #e74a3b; }
+
+    /* Ikon & Warna Neon */
+    .icon-wrapper {
+        width: 50px; height: 50px; border-radius: 14px;
+        display: flex; align-items: center; justify-content: center;
+        font-size: 20px; color: white;
+    }
+    .purp { background: linear-gradient(135deg, #6f42c1, #a927f9); box-shadow: 0 0 15px rgba(111, 66, 193, 0.4); }
+    .red { background: linear-gradient(135deg, #f5365c, #f56036); box-shadow: 0 0 15px rgba(245, 54, 92, 0.4); }
+    .teal { background: linear-gradient(135deg, #2dce89, #2dcecc); box-shadow: 0 0 15px rgba(45, 206, 137, 0.4); }
+    .orange { background: linear-gradient(135deg, #fb8c00, #ffb100); box-shadow: 0 0 15px rgba(251, 140, 0, 0.4); }
+
+    .label { color: #8898aa; font-weight: 600; font-size: 12px; letter-spacing: 1px; }
+    .value { color: #fff; font-weight: 700; }
+    .up { color: #2dce89; font-size: 13px; }
+    .down { color: #f5365c; font-size: 13px; }
+    .stats span { color: #8898aa; }
+
